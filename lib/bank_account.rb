@@ -18,7 +18,11 @@ class BankAccount
   end
 
   def get_credit_array
-    p  @credit_array
+    @credit_array
+  end
+
+  def add_credit_to_account_balance(credit)
+    @balance += credit.get_amount
   end
 
 end
