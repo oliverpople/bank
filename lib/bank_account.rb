@@ -7,6 +7,7 @@ class BankAccount
   def initialize
     @balance = BALANCE
     @credit_array =[]
+    @debit_array =[]
   end
 
   def get_balance
@@ -23,6 +24,14 @@ class BankAccount
 
   def add_credit_to_account_balance(credit)
     @balance += credit.get_amount
+  end
+
+  def add_debit_to_array(debit)
+    @debit_array.push(debit)
+  end
+
+  def get_debit_array
+    @debit_array
   end
 
 end
