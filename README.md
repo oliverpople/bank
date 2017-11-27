@@ -18,9 +18,9 @@ Here is the first draft of my design:
 
 [INTERFACE]                                 [BANKER]                    [CREDIT] / [DEBIT]    [BANK ACCOUNT]
       |
-      |   new_transaction(date, amount, type)  |  create_transaction(amount, date)|                |            
+      |   new_transaction(date, amount, type)  |  create_transaction(amount)      |                |            
       | -------------------------------------> | -------------------------------> |                |            
-      |                                        | <------------------------------- |                |                                                               |                                        |  (new_credit/debit(amount, date)                  |                                  
+      |                                        | <------------------------------- |                |                                                               |                                        |  (new_credit/debit(amount)       |                |                                  
       |                                        | add_to_account(new credit/debit(amount, date))    |       
       |                                        | ------------------------------------------------->|   
       |    see_bank_statement             get_bank_statement                                       |
@@ -31,7 +31,6 @@ Here is the first draft of my design:
 ## Potential Design Challenges:
 
 I'm still not sure what the best data structure for transactions are. My initial approach will be to create credit / debit hash objects that contain the amount and transaction date.
-
 
 ## User Stories
 
