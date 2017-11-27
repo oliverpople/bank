@@ -12,16 +12,15 @@ class Banker
       '0 sized transactions are useless'
     end
   end
+  
 
   private
 
   def new_credit(amount)
     credit = Credit.new(amount)
-    credit.get_amount
   end
 
   def new_debit(amount)
     debit = Debit.new(amount)
-    debit.get_amount
   end
 end
