@@ -1,13 +1,14 @@
 require 'credit.rb'
+require 'date'
 
 class Banker
   def initialize; end
 
-  def new_transaction(amount)
+  def new_transaction(amount, date = DateTime.new)
     if amount > 0
-      create_credit(amount)
+      create_credit(amount, date)
     elsif amount < 0
-      create_debit(amount)
+      create_debit(amount, date)
     else
       '0 sized transactions are useless'
     end
@@ -16,11 +17,11 @@ class Banker
 
   private
 
-  def create_credit(amount)
-    credit = Credit.new(amount)
+  def create_credit(amount, date)
+    credit = Credit.new(amount, date)
   end
 
-  def create_debit(amount)
-    debit = Debit.new(amount)
+  def create_debit(amount, date)
+    debit = Debit.new(amount, date)
   end
 end
