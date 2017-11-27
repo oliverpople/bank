@@ -38,4 +38,14 @@ describe '#subtract_debit_from_account_balance' do
   end
 end
 
+describe '#get_balance_sheet' do
+  it 'prints all credit, debits and balances for every recorded transaction' do
+    credit = Credit.new(1000, '10-01-2012')
+    credit2 = Credit.new(2000, '13-01-2012')
+    debit = Debit.new(500,' 14-01-2012')
+    subject.get_balance_sheet
+  #   expect(subject.get_balance_sheet).to include(1000, '10-01-2012', 2000, '13-01-2012', 500,' 14-01-2012')
+   end
+end
+
 end

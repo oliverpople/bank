@@ -4,4 +4,10 @@ require '/Users/oliverpople/Desktop/Makers/Projects/bank/lib/debit.rb'
 require '/Users/oliverpople/Desktop/Makers/Projects/bank/lib/credit.rb'
 
 
-bankacount = BankAccount.new
+bankaccount = BankAccount.new
+banker = Banker.new
+banker.new_transaction(1000, '10-01-2012')
+banker.new_transaction(2000, '13-01-2012')
+banker.new_transaction(500,' 14-01-2012')
+
+bankaccount.get_balance

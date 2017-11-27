@@ -1,11 +1,12 @@
 class BankAccount
 
-  attr_reader :balance, :credits
+  attr_reader :balance, :credits, :credit_array, :debit_array
 
   BALANCE = 0
 
   def initialize
-    @balance = BALANCE
+    balance = BALANCE
+    @balance = balance
     @credit_array =[]
     @debit_array =[]
   end
@@ -23,7 +24,7 @@ class BankAccount
   end
 
   def add_credit_to_account_balance(credit)
-    @balance += credit.get_amount
+    p @balance += credit.get_amount
   end
 
   def add_debit_to_array(debit)
@@ -36,6 +37,10 @@ class BankAccount
 
   def subtract_debit_from_account_balance(debit)
     @balance += debit.get_amount
+  end
+
+  def get_balance_sheet
+   @credit_array.each { |x| p x.to_s }
   end
 
 end

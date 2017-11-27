@@ -1,8 +1,14 @@
-require 'credit.rb'
+require './lib/credit.rb'
 require 'date'
+require './lib/bank_account.rb'
 
 class Banker
-  def initialize; end
+
+attr_reader :bankAccount
+
+  def initialize;
+    @bankAccount = BankAccount.new
+  end
 
   def new_transaction(amount, date = DateTime.new)
     if amount > 0
@@ -19,9 +25,13 @@ class Banker
 
   def create_credit(amount, date)
     credit = Credit.new(amount, date)
+    bankAccount.add_credit_to_array(credit)
+    bankAccount.add_credit_to_account_balance(credit)
   end
 
   def create_debit(amount, date)
     debit = Debit.new(amount, date)
+    bankAccount.add_debit_to_array(debit)
+    bankAccount.subtract_debit_from_account_balance(debit)
   end
 end
