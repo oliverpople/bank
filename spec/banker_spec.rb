@@ -13,6 +13,10 @@ describe Banker do
           expect(subject.new_transaction(-10)).to eq(-10)
         end
 
+        it 'raises and error if transaction is equal to 0' do
+           expect(subject.new_transaction(0)).to eq('0 sized transactions are useless')
+         end
+
     end
 
 end

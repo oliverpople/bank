@@ -10,6 +10,8 @@ class Banker
         new_credit(amount)
       elsif amount < 0
         new_debit(amount)
+      else
+        "0 sized transactions are useless"
       end
     end
 
