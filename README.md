@@ -9,7 +9,31 @@ This project is a simple example tech test.  The purpose of this test is to prac
 - Account statement (date, amount, balance) printing.
 - Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
-##User Stories
+## Design Approach
+
+As this is a simple logic-based program with console interface I have chosen to use Ruby for my production code and rspec to test.
+
+Here is the first draft of my design:
+
+
+[INTERFACE]                                 [BANKER]                    [CREDIT] / [DEBIT]    [BANK ACCOUNT]
+      |
+      |   new_transaction(date, amount, type)  |  create_transaction(amount, date)|                |            
+      | -------------------------------------> | -------------------------------> |                |            
+      |                                        | <------------------------------- |                |                                                               |                                        |  (new_credit/debit(amount, date)                  |                                  
+      |                                        | add_to_account(new credit/debit(amount, date))    |       
+      |                                        | ------------------------------------------------->|   
+      |    see_bank_statement             get_bank_statement                                       |
+      | ------------------------------------->|  ------------------------------------------------> |
+      | <------------------------------------------------------------------------------------------|
+                                         (bank_statement(date, credit/debit, amount, balance))
+
+## Potential Design Challenges:
+
+I'm still not sure what the best data structure for transactions are. My initial approach will be to create credit / debit hash objects that contain the amount and transaction date.
+
+
+## User Stories
 
 ```
 As a client
