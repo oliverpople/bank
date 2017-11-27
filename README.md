@@ -32,6 +32,10 @@ Here is the first draft of my design:
 
 I'm still not sure what the best data structure for transactions are. My initial approach will be to create credit / debit hash objects that contain the amount and transaction date.
 
+## TO DO's
+
+- Change the 'raises error' tests in banker_spec.rb to test for errors raised rather than returning a string. Currently, I am not clear on syntax needed to 'raise an error' in ruby. 
+
 ## User Stories
 
 ```
