@@ -22,5 +22,11 @@ describe Banker do
         credit = subject.new_transaction(99, '10-01-2012')
         expect(credit.get_date).to eq('10-01-2012')
     end
+
+    it 'takes a date and returns credit object with that date' do
+        debit = subject.new_transaction(-10, '10-01-2012')
+        expect(debit.get_date).to eq('10-01-2012')
+    end
+
   end
 end

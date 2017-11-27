@@ -11,4 +11,8 @@ class Debit
     @amount
   end
 
+  def get_date
+    @date
+  end
+
 end
