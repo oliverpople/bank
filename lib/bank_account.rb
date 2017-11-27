@@ -34,4 +34,8 @@ class BankAccount
     @debit_array
   end
 
+  def subtract_debit_from_account_balance(debit)
+    @balance += debit.get_amount
+  end
+
 end

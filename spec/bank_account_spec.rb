@@ -30,4 +30,12 @@ describe '#add_debit_to_array' do
   end
 end
 
+describe '#subtract_debit_from_account_balance' do
+  it 'takes debit amount and subtracts it from the accounts balance' do
+    debit = Debit.new(-10)
+    subject.subtract_debit_from_account_balance(debit)
+    expect(subject.get_balance).to eq(-10)
+  end
+end
+
 end
