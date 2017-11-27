@@ -5,10 +5,9 @@ class BankAccount
   BALANCE = 0
 
   def initialize
-    balance = BALANCE
-    @balance = balance
-    @credit_array =[]
-    @debit_array =[]
+    @balance = BALANCE
+    @credit_array = []
+    @debit_array = []
   end
 
   def get_balance
@@ -17,6 +16,11 @@ class BankAccount
 
   def add_credit_to_array(credit)
     @credit_array.push(credit)
+   #  credithash = {}
+   #  credithash[:amount] = credit.get_amount
+   #  credithash[:date] = credit.get_date
+   #   credithash
+   # @credit_array << credithash
   end
 
   def get_credit_array
@@ -24,7 +28,7 @@ class BankAccount
   end
 
   def add_credit_to_account_balance(credit)
-    p @balance += credit.get_amount
+    @balance += credit.get_amount
   end
 
   def add_debit_to_array(debit)
@@ -39,8 +43,8 @@ class BankAccount
     @balance += debit.get_amount
   end
 
-  def get_balance_sheet
-   @credit_array.each { |x| p x.to_s }
-  end
+# def print_credit_array
+#   @credit_array.each { |x| puts x[:amount] }
+# end
 
 end

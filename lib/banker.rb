@@ -27,11 +27,13 @@ attr_reader :bankAccount
     credit = Credit.new(amount, date)
     bankAccount.add_credit_to_array(credit)
     bankAccount.add_credit_to_account_balance(credit)
+    credit
   end
 
   def create_debit(amount, date)
     debit = Debit.new(amount, date)
     bankAccount.add_debit_to_array(debit)
     bankAccount.subtract_debit_from_account_balance(debit)
+    debit
   end
 end
